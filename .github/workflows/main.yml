@@ -19,9 +19,3 @@ jobs:
           coverage run -m --branch unittest discover -s tests
           coverage report --fail-under=80
           coverage xml
-      - uses: codecov/codecov-action@v5
-        with:
-          fail_ci_if_error: true # optional (default = false)
-          flags: unittests # optional
-          token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true # optional (default = false)
