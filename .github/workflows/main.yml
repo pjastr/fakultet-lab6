@@ -18,4 +18,9 @@ jobs:
         run: |
           coverage run -m --branch unittest discover -s tests
           coverage report --fail-under=80
-          coverage xml
+          coverage html
+      - name: Upload coverage report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: htmlcov
